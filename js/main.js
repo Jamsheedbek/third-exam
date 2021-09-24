@@ -54,7 +54,7 @@ for(var i=0; i<pokemons.length; i++){
     // like tugmasi
 
     var BUTTON = document.createElement('button');
-    BUTTON.classList.add('btn', 'btn-primary', 'float-end', 'me-3')
+    BUTTON.classList.add('btn', 'btn-primary', 'float-end', 'me-3');
     BUTTON.dataset.id = i;
     BUTTON.textContent = 'like';
     NEW_DIV.appendChild(BUTTON);
@@ -69,16 +69,18 @@ NEW_ROW.addEventListener('click', function(event){
         event.target.classList.add('btn-danger');
         event.target.textContent = 'dislike';
         numerator.push(pokemons[pocemonId]);
-        favourites.value = numerator.length;
+        // favourites.value = numerator.length;
         console.log(numerator)
 
     } else if(event.target.matches('.btn-danger')){
-
         event.target.classList.remove('btn-danger');
         event.target.classList.add('btn-primary');
         event.target.textContent = 'like';
-        numerator.splice(pocemonId-1, 1);
-        favourites.value = numerator.length;
+        // numerator.splice(pocemonId-1, 1);
+        delete numerator[pocemonId];
+        numerator.length -=1;
+        // favourites.value = numerator.length;
         console.log(numerator);
     }
+    favourites.value = numerator.length;
 })
