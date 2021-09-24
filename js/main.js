@@ -40,7 +40,7 @@ for(var i=0; i<pokemons.length; i++){
     // pocemon nomi
 
     var POCEMON_NAME = document.createElement('p');
-    POCEMON_NAME.classList.add('card-title', 'fs-4', 'fw-bold', 'text-center');
+    POCEMON_NAME.classList.add('card-title', 'fs-4', 'fw-bold', 'text-center', 'text-truncate');
     POCEMON_NAME.textContent = 'Name: ' + pokemons[i].name;
     NEW_DIV.appendChild(POCEMON_NAME);
 
